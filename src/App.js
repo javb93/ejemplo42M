@@ -1,13 +1,10 @@
 import "./App.css";
-import Header from "./components/Header";
-import Newcomponent from "./components/Newcomponent";
-
+import Todo from "./pages/Todo";
 function App() {
   console.log("Cargando APP");
   return (
     <div className="App">
-      <Header mensaje="HOLA MUNDO"></Header>
-      <Newcomponent></Newcomponent>
+      <Todo></Todo>
     </div>
   );
 }
