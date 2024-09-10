@@ -1,14 +1,14 @@
 import Addtask from "../components/Addtask";
 import Tasklist from "../components/Tasklist";
-
-const consttasks = ["Tarea 1", "Tarea 2", "Tarea 3", "Tarea 4"];
+import { useState } from "react";
 
 function Todo() {
+  const [tareas, setTareas] = useState([]);
   return (
     <div>
       En construccion
-      <Addtask></Addtask>
-      <Tasklist tareas={consttasks}></Tasklist>
+      <Addtask setTareas={setTareas} tareas={tareas}></Addtask>
+      <Tasklist tareas={tareas}></Tasklist>
     </div>
   );
 }
