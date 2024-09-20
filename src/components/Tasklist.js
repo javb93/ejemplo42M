@@ -1,10 +1,10 @@
-import Task from "./Task";
+import { StyledTask } from "./Styled";
 
 function Tasklist({ tareas }) {
   return (
     <ul>
       {tareas.map((tarea) => {
-        return <Task tarea={tarea}></Task>;
+        return <StyledTask tarea={tarea}></StyledTask>;
       })}
     </ul>
   );

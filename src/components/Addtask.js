@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
 function Addtask({ setTareas }) {
   const [tarea, setTarea] = useState("");
   const [isInvalid, setIsInvalid] = useState(true);
@@ -14,8 +16,12 @@ function Addtask({ setTareas }) {
   }
   return (
     <div>
-      <input
-        type="text"
+      <TextField
+        error={isInvalid}
+        helperText="La tarea debe tener al menos 10 caracteres"
+        id="outlined-basic"
+        label="tarea"
+        variant="outlined"
         value={tarea}
         onChange={(event) => {
           if (tarea.length < 10) {
@@ -26,9 +32,16 @@ function Addtask({ setTareas }) {
 
           setTarea(event.target.value);
         }}
-      ></input>
-      {isInvalid && <p>La tarea debe tener al menos 10 caracteres</p>}
-      <button onClick={addTask}>Agregar Tarea</button>
+      />
+
+      <Button
+        variant="contained"
+        color="primary"
+        style={{ marginLeft: "20px" }}
+        onClick={addTask}
+      >
+        Agregar Tarea
+      </Button>
     </div>
   );
 }
