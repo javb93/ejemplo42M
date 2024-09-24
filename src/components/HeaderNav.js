@@ -1,6 +1,7 @@
 function HeaderNav() {
   return (
     <nav style={{ width: "100%" }}>
+      <img alt="icono" src="logo192.png" />
       <ul
         style={{
           listStyle: "none",

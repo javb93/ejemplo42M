@@ -7,6 +7,7 @@ import Todo from "./pages/Todo";
 import Contactos from "./pages/Contactos";
 import HeaderNav from "./components/HeaderNav";
 import { Routes, Route } from "react-router-dom";
+import Agenda from "./pages/Agenda";
 function App() {
   return (
     <div className="App">
@@ -18,6 +19,7 @@ function App() {
           path="/calendario"
           element={<div>CALENDARIO EN CONSTRUCCION</div>}
         />
+        <Route path="/agenda" element={<Agenda />} />
         <Route path="*" element={<div>404</div>} />
       </Routes>
     </div>
