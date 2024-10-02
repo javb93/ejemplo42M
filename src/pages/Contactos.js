@@ -1,6 +1,6 @@
 import Grid from "@mui/material/Grid2";
 import Contacto from "../components/Contacto";
-
+import { useThemeStore } from "../utils/themeStore";
 const contacto = [
   {
     nombre: "Juan",
@@ -52,18 +52,22 @@ const contacto = [
   },
 ];
 function Contactos() {
+  const theme = useThemeStore((state) => state.theme);
   return (
-    <Grid
-      container
-      direction={{ xs: "column", sm: "row" }}
-      columns={{ xs: 4, sm: 8, md: 12 }}
-    >
-      {contacto.map((contacto, index) => (
-        <Grid key={index} size={{ xs: 2, sm: 4, md: 4 }}>
-          <Contacto contacto={contacto}></Contacto>
-        </Grid>
-      ))}
-    </Grid>
+    <>
+      current theme {theme}
+      <Grid
+        container
+        direction={{ xs: "column", sm: "row" }}
+        columns={{ xs: 4, sm: 8, md: 12 }}
+      >
+        {contacto.map((contacto, index) => (
+          <Grid key={index} size={{ xs: 2, sm: 4, md: 4 }}>
+            <Contacto contacto={contacto}></Contacto>
+          </Grid>
+        ))}
+      </Grid>
+    </>
   );
 }
 export default Contactos;

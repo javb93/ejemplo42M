@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
+import { useThemeStore } from "../utils/themeStore";
 function Addtask({ setTareas }) {
   const [tarea, setTarea] = useState("");
   const [isInvalid, setIsInvalid] = useState(true);
+  const theme = useThemeStore((state) => state.theme);
 
   function addTask() {
     if (!isInvalid) {
@@ -37,7 +39,11 @@ function Addtask({ setTareas }) {
       <Button
         variant="contained"
         color="primary"
-        style={{ marginLeft: "20px" }}
+        style={{
+          marginLeft: "20px",
+          backgroundColor: theme === "light" ? "white" : "black",
+          color: theme === "light" ? "black" : "white",
+        }}
         onClick={addTask}
       >
         Agregar Tarea

@@ -1,6 +1,9 @@
+import { useThemeStore } from "../utils/themeStore";
 function HeaderNav() {
+  const toggleTheme = useThemeStore((state) => state.toggleTheme);
   return (
     <nav style={{ width: "100%" }}>
+      <button onClick={toggleTheme}>Cambiar Tema</button>
       <img alt="icono" src="logo192.png" />
       <ul
         style={{
